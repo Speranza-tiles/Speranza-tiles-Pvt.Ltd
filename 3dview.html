@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D Tile View - Speranza tiles</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .tile-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .tile-item {
+      width: 100%;
+      max-width: 800px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      iframe {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Speranza Tiles</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="category.html">Category</a>
+      <a href="about us.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="3dview.html">3D View</a>
+    </nav>
+  </header>
+
+  <section class="category-intro">
+    <h1 align="center">Explore Tiles in 3D</h1>
+    <p align="center">See how our tiles look in real spaces with our immersive 360° viewer.</p>
+  </section>
+
+  <section class="tile-gallery">
+    <div class="tile-item">
+      <h2 align="center">Floor Tile - Collection 1</h2>
+      <iframe src="https://italica360.com/360/3dnew/866594" allowfullscreen></iframe>
+    </div>
+
+    <div class="tile-item">
+      <h2 align="center">Floor Tile - Collection 2</h2>
+      <iframe src="https://italica360.com/360/3dnew/862166" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Speranza Tiles. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
