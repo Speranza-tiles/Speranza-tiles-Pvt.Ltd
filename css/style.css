@@ -541,4 +541,25 @@ footer {
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
+/* Mobile First Styles */
+@media (max-width: 768px) {
+  /* This applies to tablets and smaller screens */
+
+  body {
+    padding: 10px;  /* Small padding for smaller screens */
+    font-size: 16px;  /* Adjust font size for readability */
+  }
+
+  .your-tile-section {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center-align items */
+  }
+
+  img {
+    width: 100%;  /* Images take up full width */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Customize buttons, text, and other elements */
+}
 
