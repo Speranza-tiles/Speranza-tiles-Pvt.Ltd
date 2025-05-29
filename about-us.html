@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact - Speranza tiles</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+ <style>
+     /* About Us Hero Section */
+.hero {
+  background-image: url('image/tile.png');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+/* Optional dark overlay to improve text readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* soft dark overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 24px;
+  opacity: 0.9;
+}
+
+.our-story {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.our-story h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.our-story p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mission-vision {
+  padding: 60px 20px;
+  background-color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.mv-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.mv-block {
+  flex: 1 1 45%;
+  margin-bottom: 20px;
+}
+
+.mv-block h2 {
+  font-size: 2rem;
+  color: #072c37;
+}
+
+.mv-block p {
+  font-size: 1rem;
+  color: #444;
+  max-width: 500px;
+}
+
+.core-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  background-color: #fef6ed;
+  padding: 40px;
+  border-radius: 12px;
+  align-items: center;
+}
+
+.core-left {
+  flex: 1 1 40%;
+}
+
+.core-left h2 {
+  font-size: 2rem;
+  color: #072c37;
+  margin-bottom: 20px;
+}
+
+.core-left img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.core-right {
+  flex: 1 1 50%;
+}
+
+.core-values {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.core-values li {
+  margin-bottom: 12px;
+  padding-left: 28px;
+  position: relative;
+}
+
+.core-values li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  color: green;
+}
+
+.service-section {
+  padding: 3rem 1rem;
+  background-color:  #f9f9f9; /* soft pastel background */
+  text-align: center;
+}
+
+.service-section h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.service-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.service-content img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+
+.service-text {
+  max-width: 400px;
+  text-align: left;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-content {
+    flex-direction: column;
+  }
+
+  .service-content img {
+    width: 90%;
+  }
+
+  .service-text {
+    text-align: center;
+  }
+}
+
+
+.team-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.team-member {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.team-member h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
+}
+
+.team-member p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.clients {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.clients h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.clients ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  list-style: none;
+  padding: 0;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.clients li {
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.why-choose-us {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.feature {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.contact-info {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contact-info h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+   header h1 {
+   font-size: 1.8rem;
+}
+</style>
+
+  <header>
+    <h1>Speranza tiles</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="category.html">Category</a>
+      <a href="3dview.html">3D View</a> <!-- new link -->
+      <a href="about-us.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </header>
+ 
+  <section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to Speranza Tiles Pvt. Ltd.</h1>
+    <p>Elegant. Enduring. Excellent.</p>
+  </div>
+</section>
+
+<section class="our-story">
+  <h2>Speranza Tiles Inception!</h2>
+  <p>27th May 2017 is the year Speranza started after putting in the experience and hard work of Mr. Kishore Sharma and Mr. Chandraprakash Sharma. The aim of transforming customer’s journey Of selecting tiles, bathroom fittings, sanitary ware, and much more via technology is still constant
+Through the roller coaster journey.
+
+Pleasure is to serve customers happily across Gujarat.</p>
+</section>
+
+<section class="mission-vision">
+  <div class="mv-container">
+    <div class="mv-block" align='center'>
+      <h2>Mission</h2>
+      <p align='center'>Revolutionizing the journey of Speranza Tiles to becoming a brand through customer satisfaction.</p>
+    </div>
+    <div class="mv-block" align='center'>
+      <h2>Vision</h2>
+      <p align='center'>Innovate and manufacture tiles as well as ceramics that satisfy customers while being compatible with sustainability.</p>
+    </div>
+  </div>
+
+  <div class="core-section">
+    <div class="core-left">
+      <h2>Core principles</h2>
+      <img src="image/wall.jpg" alt="Core values" />
+    </div>
+    <div class="core-right">
+      <ul class="core-values">
+        <li>✅ Being Loyal to the customers is our Royalty.</li>
+        <li>✅ Being Dynamic is the way to go with today’s era.</li>
+        <li>✅ Improving every day is the road to success.</li>
+        <li>✅ We are growing together for the team and our clients.</li>
+        <li>✅ Working happily and spreading Happiness is what keeps us going.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="service-section">
+  <h2>Service</h2>
+  <div class="service-content">
+    <img src="image/de491734-dd30-4586-ba7f-5c9e161c0cf5.jpg" alt="Tile Floor" />
+    
+    <div class="service-text">
+      <p>
+        You can get tiles, sanitary ware, and bathroom fittings everywhere, but not anywhere as comfortably and smoothly as Speranza Tiles, where the only focus is to satisfy customers both by explaining them and suggesting what’s the best.
+      </p>
+      <p>
+        Our high-quality products will provide you satisfaction, but because we care for your money, our Service will satisfy you mentally and monetarily.
+      </p>
+    </div>
+
+    <img src="image/Screenshot 2025-05-29 122918.png" alt="Office Setup with Tiles" />
+  </div>
+</section>
+
+
+
+<section class="team-section">
+  <h2>Meet Our Team</h2>
+  <div class="team-grid">
+    <!-- Partners -->
+    <div class="team-member">
+      <img src="image/team/chandraprakash.jpg" alt="Chandra Prakash Sharma">
+      <h3>Chandra Prakash Sharma</h3>
+      <p>Partner</p>
+    </div>
+    <div class="team-member">
+      <img src="image/team/kishore.jpg" alt="Kishore Kumar Sharma">
+      <h3>Kishore Kumar Sharma</h3>
+      <p>Partner</p>
+    </div>
+    <!-- Staff -->
+    <div class="team-member">
+      <img src="image/team/tarachand.jpg" alt="Tarachand Sharma">
+      <h3>Tarachand Sharma</h3>
+      <p>Manager</p>
+    </div>
+    <div class="team-member">
+      <img src="image/team/chirag.jpg" alt="Chirag Sharma">
+      <h3>Chirag Sharma</h3>
+      <p>Accountant</p>
+    </div>
+    <div class="team-member">
+      <img src="image/team/vinod.jpg" alt="Vinod Sharma">
+      <h3>Vinod Sharma</h3>
+      <p>Sales Executive</p>
+    </div>
+    <div class="team-member">
+      <img src="image/team/kush.jpg" alt="Kush">
+      <h3>Kush</h3>
+      <p>Supervisor</p>
+    </div>
+  </div>
+</section>
+ 
+<section class="clients">
+  <h2>Sites We've Served</h2>
+  <ul>
+    <li>Tata Moters</li>
+    <li>Devex</li>
+    <li>Qatar Airways</li>
+    <li>Novo bank</li>
+    <li>Ratnamani Mattel’s</li>
+    <li>Jindal</li>
+    <li>Gift city</li>
+  </ul>
+</section>
+
+<section class="why-choose-us">
+  <h2>Why Choose Us</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>Premium Quality</h3>
+      <p>We offer top-notch tiles and sanitary ware that meet international standards.</p>
+    </div>
+    <div class="feature">
+      <h3>Expert Team</h3>
+      <p>Our experienced professionals ensure exceptional service and guidance.</p>
+    </div>
+    <div class="feature">
+      <h3>On-time Delivery</h3>
+      <p>We value your time and ensure timely delivery of all orders.</p>
+    </div>
+    <div class="feature">
+      <h3>Customer Satisfaction</h3>
+      <p>Our clients' happiness is our top priority, and we strive to exceed expectations.</p>
+    </div>
+  </div>
+</section>
+
+ <section class="contact-info">
+  <h2>Contact Us</h2>
+  <p><strong>Address:</strong> 4 & 5, 2nd Floor, Campus Corner - 1, Opp. Sales India, 100 Ft. Road, Nr. Prahlad Nagar Garden, Satellite, Ahmedabad - 380015</p>
+  <p><strong>Phone:</strong> +91 96388 02289</p>
+  <p><strong>Email:</strong> speranzatiles@gmail.com</p>
+</section>
+
+ </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Speranza tiles. All rights reserved.</p>
+  </footer>
+</body>
+</html>
